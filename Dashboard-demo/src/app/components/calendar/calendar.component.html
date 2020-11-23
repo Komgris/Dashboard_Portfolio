@@ -1,18 +1,17 @@
-<div>
     <div class="row justify-content-between">
-        <div class="col-sm-12">
+        <div class="col-sm-10">
             <h1 style="color: white; font-size: 4rem;">Reserve Meeting Room System</h1>
             <div class="row">
                 <div class="col-sm-6">
                     <label style="color: white; font-size: 2rem;">Select Meeting Room : </label>
                     <select style="font-size: 2rem;" name="cars" id="cars">
-                        <option value="volvo">Room 1</option>
-                        <option value="saab">Room 2</option>
-                        <option value="opel">Room 3</option>
-                        <option value="audi">Room 4</option>
+                        <option *ngFor="let item of room;" >{{item.name}}</option>
                     </select>
                 </div>
             </div>
+        </div>
+        <div class="col-sm-2">
+            <button class ="btn btn-primary btn-lg btn-block" style="font-size: 2rem; margin-top: 20px;">RESERVE</button>
         </div>
 
     </div>
@@ -41,4 +40,3 @@
                     </tbody>
                 </table>
             </div>
-        </div>

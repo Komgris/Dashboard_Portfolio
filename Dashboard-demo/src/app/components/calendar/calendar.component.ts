@@ -9,11 +9,6 @@ import { CalendarOptions } from '@fullcalendar/angular';
 export class CalendarComponent implements OnInit {
 
   appointment=[
-    {topic: 'Test1' ,datestart:'',dateFinish:''},
-    {topic: 'Test2' ,datestart:'',dateFinish:''},
-    {topic: 'Test3' ,datestart:'',dateFinish:''},
-    {topic: 'Test4' ,datestart:'',dateFinish:''},
-    {topic: 'Test5' ,datestart:'',dateFinish:''},
   ]
   room=[
     {id:1,name:'Room 1'},
