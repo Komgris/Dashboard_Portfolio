@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OpenLibaryService } from 'src/app/services/open-libary.service';
 
 @Component({
   selector: 'app-information',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InformationComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private libaryService: OpenLibaryService
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    console.log(await this.libaryService.search('percy jackson'))
   }
 
 }
