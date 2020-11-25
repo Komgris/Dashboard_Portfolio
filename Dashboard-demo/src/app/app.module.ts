@@ -11,6 +11,10 @@ import { InformationComponent } from './components/information/information.compo
 import { FullCalendarModule } from '@fullcalendar/angular';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction'
+import { CalendarModalModel } from './models/calendar.modal.model';
+import { CreateCalendarComponent } from './components/calendar/popup/create-calendar/create-calendar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -23,16 +27,21 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     DashboardComponent,
     ReportComponent,
     CalendarComponent,
-    InformationComponent
+    InformationComponent,
+    CreateCalendarComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     NgbModule,
-    FullCalendarModule 
+    FullCalendarModule ,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    CalendarModalModel
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

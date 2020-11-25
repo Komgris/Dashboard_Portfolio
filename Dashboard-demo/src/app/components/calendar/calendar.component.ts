@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ICalendar } from 'src/app/interfaces/calendar.interface';
+import { CalendarModalModel } from 'src/app/models/calendar.modal.model';
+import { CreateCalendarComponent } from './popup/create-calendar/create-calendar.component';
 
 @Component({
   selector: 'app-calendar',
@@ -8,13 +12,7 @@ import { CalendarOptions } from '@fullcalendar/angular';
 })
 export class CalendarComponent implements OnInit {
 
-  appointment=[
-    {topic: 'Test1' ,datestart:'',dateFinish:''},
-    {topic: 'Test2' ,datestart:'',dateFinish:''},
-    {topic: 'Test3' ,datestart:'',dateFinish:''},
-    {topic: 'Test4' ,datestart:'',dateFinish:''},
-    {topic: 'Test5' ,datestart:'',dateFinish:''},
-  ]
+  appointment: ICalendar[]=[];
   room=[
     {id:1,name:'Room 1'},
     {id:2,name:'Room 2'},
@@ -34,9 +32,15 @@ export class CalendarComponent implements OnInit {
     //height: 500
   };
 
-  constructor() { }
+  constructor(
+    private modalService: NgbModal
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  openCalendar(){
+    this.modalService.open(CreateCalendarComponent);
   }
 
 }

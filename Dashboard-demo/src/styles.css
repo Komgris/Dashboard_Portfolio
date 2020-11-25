@@ -31,12 +31,12 @@ table td {
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 100%;
-    height: 100vh;
+    height:100vh; max-height: 100vh;
 }
 .tab button {
     display: block;
     background-color: inherit;
-    color: black;
+    color: #1e1e2f;
     padding: 22px 16px;
     width: 100%;
     border: none;
