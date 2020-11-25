@@ -1,0 +1,16 @@
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="tab">
+                    <button (click)="select(item)" *ngFor="let item of menuitems; let i = index" class="tablinks"
+                        [ngClass]="{'tab-active': item.isActive }">{{item.name}}</button>
+                </div>
+            </div>
+            <div class="col-sm-10">
+                <main role="main" >
+                    <router-outlet></router-outlet>
+                </main>
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,76 @@
+<h1 style="color: white; font-size: 4rem;">Libary : openlibrary API</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-7">
+            <input type="text" [(ngModel)]="keyword"
+                style="width: 100%; font-size: 2rem; text-align: center; border-radius: 10px;">
+        </div>
+        <div class="col-sm-2">
+            <select [(ngModel)]="selectedOption" class="form-control form-control-lg" style="font-size: 1.5rem; height: 100%;">
+                <option *ngFor="let item of searchOption;" [ngValue]="item.key" >{{item.value}}</option>
+              </select>
+        </div>
+        <div class="col-sm-3">
+            <button (click)="onSearch()" class="btn btn-success btn-lg btn-block"
+                style="font-size: 1.5rem;">Search</button>
+        </div>
+        <div class="col-sm-12">
+            <div class="row d-flex justify-content-between" style="margin-top: 10px;">
+                <div >
+                    <label style="color: whitesmoke; "><h2>Search Result : {{bookCount}}</h2></label>
+                </div>
+                <div>
+                    <ngb-pagination *ngIf="bookCount >= rowSize" [(page)]="page" [pageSize]="rowSize" [collectionSize]="bookCount" aria-label="Default pagination" (pageChange)="onSearch()"></ngb-pagination>
+                </div>
+            </div>
+        </div>
+        <div style="overflow: auto; max-height: 78vh;">
+            <div *ngFor="let item of mockReport;" class="col-sm-12"
+                style="margin-top: 10px; margin-bottom: 10px; border: 1px solid white;  border-radius: 5px; background-color: whitesmoke;">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src={{setImage(item.cover_edition_key)}}>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="card" style="padding: 10px 10px 10px 10px; word-wrap: break-word;">
+                            <div style=" display: flex; flex-direction: row;"><label>
+                                    <h3 style="font-weight: bold; text-decoration: underline;">Title: </h3>
+                                </label>
+                                <h3 style="margin-left: 10px;">{{item.title_suggest}}</h3>
+                            </div>
+                            <div style=" display: flex; flex-direction: row;"><label>
+                                    <h3 style="font-weight: bold; text-decoration: underline;">Author: </h3>
+                                </label>
+                                <h3 style="margin-left: 10px;">{{item.author_name}}</h3>
+                            </div>
+                            <div style=" display: flex; flex-direction: row;"><label>
+                                    <h3 style="font-weight: bold; text-decoration: underline;">Publisher: </h3>
+                                </label>
+                                <h3 style="margin-left: 10px;">{{item.publisher}}</h3>
+                            </div>
+                            <label>
+                                <h3 style="font-weight: bold; text-decoration: underline;">Language : </h3>
+                            </label>
+                            <div style=" display: flex; flex-direction: row;">
+                                <span *ngFor="let lg of item.language;" class="badge badge-pill badge-primary"
+                                    style="margin-left: 5px;">
+                                    <h5>{{lg}}</h5>
+                                </span>
+                            </div>
+                            <label>
+                                <h3 style="font-weight: bold; text-decoration: underline;">Subject : </h3>
+                            </label>
+                            <div>
+                                <span *ngFor="let sj of item.subject;" class="badge badge-pill badge-success"
+                                    style="margin-left: 5px; margin-bottom: 5px;">
+                                    <h5>{{sj}}</h5>
+                                </span>
+                            </div>
+                            <button class ="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">Borrow</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

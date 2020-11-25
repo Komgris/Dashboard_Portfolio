@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap');
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #1e1e2f;
+}
+table tbody td {
+  padding: 10px !important;
+}
+
+table th {
+  text-align: center;
+}
+
+td.number {
+  text-align: right;
+}
+
+td.keyword {
+  text-align: center;
+}
+
+/* table th {
+  font-size: 15pt;
+}
+
+table td {
+  font-size: 15pt;
+} */
+.tab {
+    float: left;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    width: 100%;
+    height:100vh; max-height: 100vh;
+}
+.tab button {
+    display: block;
+    background-color: inherit;
+    color: #1e1e2f;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 1.5rem;
+  }
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  .tab-active{
+    border-right: 10px solid lightskyblue !important;
+    border-top: 1px solid grey !important;
+    border-bottom: 1px solid grey !important;
+  }
+  .main-panel{
+    margin-top: 20px;
+  }
