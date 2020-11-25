@@ -8,6 +8,7 @@ import { OpenLibaryService } from 'src/app/services/open-libary.service';
 })
 export class InformationComponent implements OnInit {
   keyword:string='Percy Jackson';
+  maxSize:number =4;
   bookCount:number=0;
   mockReport:any;
   searchOption=[
