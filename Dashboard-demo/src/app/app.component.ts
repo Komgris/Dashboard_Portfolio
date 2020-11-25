@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   active = 'top';
   menuitems = [
     { name: "Dashboard", id: "dashboard", url: "/dashboard", isActive: false },
-    { name: "Libary", id: "libary", url: "/libary", isActive: false },
+    { name: "Library", id: "library", url: "/library", isActive: false },
     { name: "Report", id: "report", url: "/report", isActive: false },
     { name: "Calendar", id: "calendar", url: "/calendar", isActive: false }  
   ];

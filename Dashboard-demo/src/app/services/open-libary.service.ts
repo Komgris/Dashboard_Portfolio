@@ -6,6 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class OpenLibaryService{
   baseUrl="http://openlibrary.org/"
+  coverUrl="http://covers.openlibrary.org/b/olid/"
+  format=".jpg"
 
   httpOptions = {
     headers: new HttpHeaders({
@@ -16,8 +18,12 @@ export class OpenLibaryService{
     private http: HttpClient
   ) {}
 
-  async search(bookname: string){
-    const response = await this.http.get(`${this.baseUrl}search.json?q=${bookname}`).toPromise();
+  async search(bookname: string,option:string,page:number){
+    const response = await this.http.get(`${this.baseUrl}search.json?${option}=${bookname}&page=${page}`).toPromise();
     return response
+  }
+
+  getCover(boid:string,size:string){
+    return `${this.coverUrl}${boid}-${size}${this.format}`
   }
 }

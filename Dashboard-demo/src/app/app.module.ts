@@ -14,6 +14,7 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { CalendarModalModel } from './models/calendar.modal.model';
 import { CreateCalendarComponent } from './components/calendar/popup/create-calendar/create-calendar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -35,7 +36,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     BrowserAnimationsModule,
     HttpClientModule,
     NgbModule,
-    FullCalendarModule 
+    FullCalendarModule ,
+    FormsModule
   ],
   providers: [
     CalendarModalModel
