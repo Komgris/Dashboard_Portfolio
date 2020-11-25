@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class OpenLibaryService{
-  baseUrl="http://openlibrary.org/"
-  coverUrl="http://covers.openlibrary.org/b/olid/"
+  baseUrl="https://openlibrary.org/"
+  coverUrl="https://covers.openlibrary.org/b/olid/"
   format=".jpg"
 
   httpOptions = {
