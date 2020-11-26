@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CalendarOptions } from '@fullcalendar/angular';
-import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ICalendar } from 'src/app/interfaces/calendar.interface';
-import { CalendarModalModel } from 'src/app/models/calendar.modal.model';
 import { CreateCalendarComponent } from './popup/create-calendar/create-calendar.component';
 
 @Component({

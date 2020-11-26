@@ -24,6 +24,8 @@
     "@fullcalendar/daygrid": "^5.4.0",
     "@fullcalendar/interaction": "^5.4.0",
     "@ng-bootstrap/ng-bootstrap": "^8.0.0",
+    "@types/uuid": "^8.3.0",
+    "alertifyjs": "^1.13.1",
     "bootstrap": "4.1.1",
     "chart.js": "^2.9.4",
     "file-saver": "^2.0.5",
@@ -31,6 +33,7 @@
     "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
+    "uuid": "^8.3.1",
     "xlsx": "^0.16.9",
     "zone.js": "~0.10.2"
   },
