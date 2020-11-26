@@ -1,4 +1,16 @@
-<h1 style="color: white; font-size: 4rem;">Libary : openlibrary API</h1>
+<div class="row justify-content-between">
+    <div>
+        <h1 style="color: white; font-size: 4rem;">Libary : openlibrary API</h1>
+    </div>
+    <div>
+        <div style="margin-right: 10px;">
+            <div class="rounded-circle icon-cart-libary">
+                <span (click)="showCart()" class="material-icons md-48">shopping_cart</span>
+            </div>
+            <div style=" color: white; float: right;"><h3>{{cartCount}}</h3></div> 
+        </div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
@@ -24,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <div style="overflow: auto; max-height: 78vh;">
+        <div style="overflow: auto; max-height: 72vh;">
             <div *ngFor="let item of mockReport;" class="col-sm-12"
                 style="margin-top: 10px; margin-bottom: 10px; border: 1px solid white;  border-radius: 5px; background-color: whitesmoke;">
                 <div class="row">
@@ -66,7 +78,7 @@
                                     <h5>{{sj}}</h5>
                                 </span>
                             </div>
-                            <button class ="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">Borrow</button>
+                            <button (click)="borrow(item.title_suggest,item.author_name,item.cover_edition_key)" class ="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">Borrow</button>
                         </div>
                     </div>
                 </div>

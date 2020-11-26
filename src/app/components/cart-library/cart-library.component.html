@@ -1,0 +1,22 @@
+<div style="padding: 10px 10px 10px 10px ;">
+<h1><span class="material-icons md-48">shopping_cart</span>Cart</h1>
+<h3>You have {{countList}} books in your cart</h3>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Cover</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Remove</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cartList; let i = index">
+            <td class="keyword"> <img src={{setImage(item.cover)}}></td>
+            <td class="keyword">{{item.title}}</td>
+            <td class="keyword">{{item.author}}</td>
+            <th><span (click)="remove(item.id)" class="material-icons md-36" style="cursor: pointer;">delete_outline</span></th>
+        </tr>
+    </tbody>
+</table>
+</div>
