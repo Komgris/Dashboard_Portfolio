@@ -14,22 +14,20 @@ export class CartService {
   constructor() { }
 
   addCart(cart:ILibraryCart){
-    let bookList:ILibraryCart[]=[]; 
     this.currentCart.subscribe(value=>{
-      bookList = value;
+      this.cartModel = value;
     })
-    bookList.push(cart);
-    this.cartSource.next(bookList);
-    console.log(bookList);
+    this.cartModel.push(cart);
+    this.cartSource.next(this.cartModel);
+    console.log(this.cartModel);
   }
 
   removeCart(uuid:string){
-    let bookList:ILibraryCart[]=[]; 
     this.currentCart.subscribe(value=>{
-      bookList = value;
-    })
-    bookList = bookList.filter(x=>x.id!=uuid);
-    this.cartSource.next(bookList);
+      this.cartModel = value;
+    });
+    this.cartModel = this.cartModel.filter(x=>x.id!=uuid);
+    this.cartSource.next(this.cartModel);
   }
 
 }

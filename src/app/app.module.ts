@@ -16,6 +16,7 @@ import { CreateCalendarComponent } from './components/calendar/popup/create-cale
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CartLibraryComponent } from './components/cart-library/cart-library.component';
+import { SetReportNameComponent } from './components/report/set-report-name/set-report-name.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -30,7 +31,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     CalendarComponent,
     InformationComponent,
     CreateCalendarComponent,
-    CartLibraryComponent
+    CartLibraryComponent,
+    SetReportNameComponent
   ],
   imports: [
     BrowserModule,

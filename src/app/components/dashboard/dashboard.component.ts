@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsApiService } from 'src/app/services/news-api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(
 
-  ngOnInit(): void {
+  ) { }
+
+  async ngOnInit(): Promise<void> {
+ 
   }
+
+
 
 }

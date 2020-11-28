@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { IMockDataInterface } from 'src/app/interfaces/mockdata.interface';
+import { ExportExcelService } from 'src/app/services/export-excel.service';
+import { JsonMockService } from 'src/app/services/json-mock.service';
+import { SetReportNameComponent } from './set-report-name/set-report-name.component';
 
 @Component({
   selector: 'app-report',
@@ -6,20 +11,36 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./report.component.css']
 })
 export class ReportComponent implements OnInit {
-  mockReport = [
-    {name:'Harry Potter',author:'J.K. Rowling',genres:'Fiction',prices: 250},
-    {name:'The Load of the Rings',author:'J.R.R.Tolkien',genres:'Fiction',prices: 500},
-    {name:'Percy Jackson & the Olympians',author:'Rick Riordan',genres:'Fiction',prices: 200},
-    {name:'The Chronicles of Narnia',author:'C. S. Lewis',genres:'Fiction',prices:0},
-    {name:'',author:'',genres:'',prices:0},
-    {name:'',author:'',genres:'',prices:0},
-    {name:'',author:'',genres:'',prices:0},
-    {name:'',author:'',genres:'',prices:0},
-    {name:'',author:'',genres:'',prices:0},
-  ];
-  constructor() { }
+  mockReport:IMockDataInterface[] = [];
+  reportName:string='';
+  
+  constructor(
+    private jsonMockService : JsonMockService,
+    private modalService: NgbModal,
+    private exportService : ExportExcelService
+  ) { }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
+    await this.getMockdata();
+  }
+
+  async getMockdata(){
+    const data: any = await this.jsonMockService.getMockData();
+    this.mockReport = data;
+  }
+
+  exportAsXLSX(){
+    const modal: NgbModalRef = this.modalService.open(SetReportNameComponent);
+    modal.result.then(
+      (result) => {
+        this.reportName = result;
+        this.exportService.exportAsExcelFile(this.mockReport, result);
+      }
+    );
+  }
+
+  open() {
+
   }
 
 }

@@ -32,7 +32,6 @@ export class CartLibraryComponent implements OnInit {
   }
 
   remove(uuid:string){
-    console.log(uuid)
     this.cartService.removeCart(uuid);
   }
 

@@ -4,8 +4,8 @@
             <div class="row">
                 <div class="col-sm-6">
                     <label style="color: white; font-size: 2rem;">Select Meeting Room : </label>
-                    <select style="font-size: 2rem;" name="cars" id="cars">
-                        <option *ngFor="let item of room;" >{{item.name}}</option>
+                    <select [(ngModel)]="selectedRoom" style="font-size: 2rem;" name="cars" id="cars">
+                        <option *ngFor="let item of room;" [ngValue]="item" >{{item}}</option>
                     </select>
                 </div>
             </div>
