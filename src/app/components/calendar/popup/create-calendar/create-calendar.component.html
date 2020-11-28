@@ -1,21 +1,36 @@
 <h1 style="background-color: #007bff; color: white; text-align: center; padding-top: 10px; padding-bottom: 10px">Reserve Meeting Room</h1>
 <div style="padding: 20px 20px 20px 20px;">
     <form>
+
+          <div class="form-group row">
+            <div class="col-sm-6 col-md-6"> <label><h4>Room</h4></label></div>
+            <div class="col-sm-6 col-md-6"> <label><h4>Meeting Type</h4></label></div>
+            <div class="col-sm-6 col-md-6">
+                <select [(ngModel)]="selectedRoom" name="room" class="form-control form-control-m" >
+                    <option *ngFor="let item of roomList;" [ngValue]="item" >{{item}}</option>
+                </select>  
+            </div>
+            <div class="col-sm-6 col-md-6">
+                <select [(ngModel)]="model.color" name="room" class="form-control form-control-m" >
+                    <option *ngFor="let item of colorList;" [ngValue]="item.key" >{{item.value}}</option>
+                </select>  
+            </div>
+        </div>
         <div class="form-group">
             <label><h4>Topic</h4></label>
-            <input type="text" class="form-control" id="topic">    
+            <input [(ngModel)]="model.topic" name="topic" type="text" class="form-control" id="topic">    
         </div>
         <div class="form-group">
             <label><h4>Date Start</h4></label>
-            <input type="datetime-local"  name = "dateStart" va class="form-control" id="dateStart">    
+            <input [(ngModel)]="model.datestart" name="datestart" type="datetime-local"  va class="form-control" id="dateStart">    
         </div>
         <div class="form-group">
             <label><h4>Date Finish</h4></label>
-            <input type="datetime-local"  name = "dateFinish" va class="form-control" id="dateFinish">    
+            <input [(ngModel)]="model.dateFinish" name="dateFinish" type="datetime-local" va class="form-control" id="dateFinish">    
         </div>
             <div class="row justify-content-around">
                 <div class="col-sm-3">
-                    <button type="button" class="btn btn-primary btn-lg">Confirm</button>
+                    <button (click)="save()" type="button" class="btn btn-primary btn-lg">Confirm</button>
                 </div>
                 <div class="col-sm-3">
                     <button (click)="activeModal.close()" type="button" class="btn btn-secondary btn-lg">Close</button>
