@@ -1,13 +1,13 @@
 <div class="row justify-content-between">
     <div>
-        <h1 style="color: white; font-size: 4rem;">Libary : openlibrary API</h1>
+        <h1 style=" font-size: 4rem;">Libary : openlibrary API</h1>
     </div>
     <div>
         <div style="margin-right: 10px;">
             <div class="rounded-circle icon-cart-libary">
                 <span (click)="showCart()" class="material-icons md-48">shopping_cart</span>
             </div>
-            <div style=" color: white; float: right;"><h3>{{cartCount}}</h3></div> 
+            <div style=" float: right;"><h3>{{cartCount}}</h3></div> 
         </div>
     </div>
 </div>
@@ -29,7 +29,7 @@
         <div class="col-sm-12">
             <div class="row d-flex justify-content-between" style="margin-top: 10px;">
                 <div >
-                    <label style="color: whitesmoke; "><h2>Search Result : {{bookCount}}</h2></label>
+                    <label ><h2>Search Result : {{bookCount}}</h2></label>
                 </div>
                 <div>
                     <ngb-pagination *ngIf="bookCount >= rowSize" [maxSize]="maxSize" [(page)]="page" [pageSize]="rowSize" [collectionSize]="bookCount" aria-label="Default pagination" (pageChange)="onSearch()"></ngb-pagination>
@@ -41,7 +41,9 @@
                 style="margin-top: 10px; margin-bottom: 10px; border: 1px solid white;  border-radius: 5px; background-color: whitesmoke;">
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src={{setImage(item.cover_edition_key)}}>
+                        <div *ngIf="item.cover_edition_key; then thenBlock; else elseBlock"></div>
+                        <ng-template #thenBlock><img src={{setImage(item.cover_edition_key)}}></ng-template> 
+                        <ng-template #elseBlock><h2>No Image Avaliable</h2></ng-template> 
                     </div>
                     <div class="col-sm-9">
                         <div class="card" style="padding: 10px 10px 10px 10px; word-wrap: break-word;">

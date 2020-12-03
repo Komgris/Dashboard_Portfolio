@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CartLibraryComponent } from './components/cart-library/cart-library.component';
 import { SetReportNameComponent } from './components/report/set-report-name/set-report-name.component';
+import { ChartsModule } from 'ng2-charts';
+import { NgxGaugeModule } from 'ngx-gauge';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -41,7 +43,9 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     HttpClientModule,
     NgbModule,
     FullCalendarModule ,
-    FormsModule
+    FormsModule,
+    ChartsModule,
+    NgxGaugeModule
   ],
   providers: [
     CalendarModalModel
