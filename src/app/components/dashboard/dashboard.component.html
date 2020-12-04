@@ -3,7 +3,7 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header bg-secondary text-white">
-                    <h3>Chart js</h3>
+                    <h3>Chart js : Covid Case API <a class="btn btn-link text-white" href="https://covid19api.com/" >Covid19API</a></h3>
                 </div>
                 <div class="card-body">
                     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
@@ -15,7 +15,7 @@
             <div class="d-flex flex-column bd-highlight mb-3 mt-2">
                 <div *ngFor="let item of randomCatList;" class="card bg-dark mb-3 mt-1">
                     <div class="card-header bg-warning">
-                        <h3>Random {{item.type}} Fact API</h3>
+                        <h3>Random {{item.type}} Fact API <a class="btn btn-link text-white" href="https://alexwohlbruck.github.io/cat-facts/" >CatFactsAPI</a></h3>
                     </div>
                     <div class="card-body text-white">
                             {{item.text}}
@@ -26,7 +26,10 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header bg-success text-white">
-                    <h3>Ngx Gauge</h3>
+                    <div class="row justify-content-between">
+                        <h3>Ngx Gauge : Random data</h3>
+                        <button type="button" class="btn btn-outline-light btn-lg mr-2">Random</button>
+                    </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -52,7 +55,7 @@
             <div class="card mt-2" style=" overflow: auto; max-height: 50vh;">
 
 <div class="card-header fix-header bg-primary text-white">
-    <h3>Curreny Base on {{baseCurrency}} At {{currencyDate | date : dateFormat}}</h3>
+    <h3>Currency Base on {{baseCurrency}} At {{currencyDate | date : dateFormat}} <a class="btn btn-link text-white" href="https://exchangeratesapi.io/" >ExchangeRatesAPI</a></h3>
 </div>
             <table class="table table-striped" >
                 <tbody>

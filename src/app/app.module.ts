@@ -19,6 +19,7 @@ import { CartLibraryComponent } from './components/cart-library/cart-library.com
 import { SetReportNameComponent } from './components/report/set-report-name/set-report-name.component';
 import { ChartsModule } from 'ng2-charts';
 import { NgxGaugeModule } from 'ngx-gauge';
+import { AboutComponent } from './components/about/about.component';
 
 FullCalendarModule.registerPlugins([ // register FullCalendar plugins
   dayGridPlugin,
@@ -34,7 +35,8 @@ FullCalendarModule.registerPlugins([ // register FullCalendar plugins
     InformationComponent,
     CreateCalendarComponent,
     CartLibraryComponent,
-    SetReportNameComponent
+    SetReportNameComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
