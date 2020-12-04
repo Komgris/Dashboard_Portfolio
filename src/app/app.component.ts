@@ -1,5 +1,8 @@
+import { AbsoluteSourceSpan } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { AboutComponent } from './components/about/about.component';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +18,8 @@ export class AppComponent implements OnInit {
     { name: "Calendar", id: "calendar", url: "/calendar", isActive: false }  
   ];
   constructor(
-    private router: Router
+    private router: Router,
+    private modalService: NgbModal
   ) {
     router.events.forEach((event) => {
 
@@ -30,11 +34,24 @@ export class AppComponent implements OnInit {
         }
     });
 }
+
+ngbModalOptions: NgbModalOptions = {
+  size:'lg'
+};
+
   ngOnInit(): void {
-    //throw new Error('Method not implemented.');
+    let firstTime = localStorage.getItem('firstTime');
+    if(!firstTime){
+      localStorage.setItem('firstTime','true');
+      this.modalService.open(AboutComponent,this.ngbModalOptions);
+    }
   }
   select(model: any) {
     this.router.navigate([model.url]);
+  }
+
+  aboutClick(){
+
   }
 
 }
