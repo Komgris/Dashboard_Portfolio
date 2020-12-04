@@ -48,9 +48,9 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   async ngOnInit(): Promise<void> {
-     this.currency(); 
-     this.randomCat();
-     this.covidChart();
+    //  this.currency(); 
+    //  this.randomCat();
+    //  this.covidChart();
   }
   async randomCat(){
     const data : any = await this.mockService.getRandomCat(this.randomCatAmount);

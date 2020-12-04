@@ -1,9 +1,10 @@
 <div style="padding: 10px 10px 10px 10px;">
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-header bg-secondary text-white">
-                    <h3>Chart js : Covid Case API <a class="btn btn-link text-white" href="https://covid19api.com/" >Covid19API</a></h3>
+                    <h3>Chart js : Covid Case API <a class="btn btn-link text-white"
+                            href="https://covid19api.com/">Covid19API</a></h3>
                 </div>
                 <div class="card-body">
                     <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
@@ -15,15 +16,16 @@
             <div class="d-flex flex-column bd-highlight mb-3 mt-2">
                 <div *ngFor="let item of randomCatList;" class="card bg-dark mb-3 mt-1">
                     <div class="card-header bg-warning">
-                        <h3>Random {{item.type}} Fact API <a class="btn btn-link text-white" href="https://alexwohlbruck.github.io/cat-facts/" >CatFactsAPI</a></h3>
+                        <h3>Random {{item.type}} Fact API <a class="btn btn-link text-white"
+                                href="https://alexwohlbruck.github.io/cat-facts/">CatFactsAPI</a></h3>
                     </div>
                     <div class="card-body text-white">
-                            {{item.text}}
+                        {{item.text}}
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-md-6 col-sm-12">
             <div class="card">
                 <div class="card-header bg-success text-white">
                     <div class="row justify-content-between">
@@ -33,17 +35,17 @@
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-md-4 col-sm-12">
                             <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
                                 [append]="gaugeAppendText">
                             </ngx-gauge>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4 col-sm-12">
                             <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
                                 [append]="gaugeAppendText">
                             </ngx-gauge>
                         </div>
-                        <div class="col-sm-4">
+                        <div class="col-md-4 col-sm-12">
                             <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
                                 [append]="gaugeAppendText">
                             </ngx-gauge>
@@ -54,21 +56,20 @@
             </div>
             <div class="card mt-2" style=" overflow: auto; max-height: 50vh;">
 
-<div class="card-header fix-header bg-primary text-white">
-    <h3>Currency Base on {{baseCurrency}} At {{currencyDate | date : dateFormat}} <a class="btn btn-link text-white" href="https://exchangeratesapi.io/" >ExchangeRatesAPI</a></h3>
-</div>
-            <table class="table table-striped" >
-                <tbody>
-                    <tr *ngFor="let item of cuurencyList; let i = index">
-                        <td class="keyword">{{item.key}}</td>
-                        <td class="keyword">{{item.value}}</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        </div>
-        <div class="col-sm-6">
+                <div class="card-header fix-header bg-primary text-white">
+                    <h3>Currency Base on {{baseCurrency}} At {{currencyDate | date : dateFormat}} <a
+                            class="btn btn-link text-white" href="https://exchangeratesapi.io/">ExchangeRatesAPI</a>
+                    </h3>
+                </div>
+                <table class="table table-striped">
+                    <tbody>
+                        <tr *ngFor="let item of cuurencyList; let i = index">
+                            <td class="keyword">{{item.key}}</td>
+                            <td class="keyword">{{item.value}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
         </div>
     </div>
