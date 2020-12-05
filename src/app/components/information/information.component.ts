@@ -14,7 +14,7 @@ declare let alertify: any;
   styleUrls: ['./information.component.css']
 })
 export class InformationComponent implements OnInit {
-  keyword: string = 'The Hobbit';
+  keyword: string = 'Les Misérables';
   maxSize: number = 4;
   bookCount: number = 0;
   mockReport: any;
