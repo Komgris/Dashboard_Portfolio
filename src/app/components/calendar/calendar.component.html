@@ -1,27 +1,27 @@
     <div class="row justify-content-between">
-        <div class="col-sm-10">
-            <h1 style="font-size: 4rem;">Reserve Meeting Room System</h1>
+        <div class="col-md-10 col-sm-12">
+            <h1 class="font-size4rem">Reserve Meeting Room System</h1>
             <div class="row">
-                <div class="col-sm-6">
-                    <label style="font-size: 2rem;">Select Meeting Room : </label>
-                    <select [(ngModel)]="selectedRoom" style="font-size: 2rem;" name="cars" id="cars">
+                <div class="col-md-6 col-sm-12">
+                    <label class="font-size2rem">Select Meeting Room : </label>
+                    <select [(ngModel)]="selectedRoom" class="font-size2rem" name="cars" id="cars">
                         <option *ngFor="let item of room;" [ngValue]="item" >{{item}}</option>
                     </select>
                 </div>
             </div>
         </div>
-        <div class="col-sm-2">
-            <button (click)="openCalendar()" class ="btn btn-primary btn-lg btn-block" style="font-size: 2rem; margin-top: 20px;">RESERVE</button>
+        <div class="col-md-2 col-sm-12">
+            <button (click)="openCalendar()" class ="btn btn-primary btn-lg btn-block mt-3 font-size2rem">RESERVE</button>
         </div>
 
     </div>
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-12 col-md-6">
             <div class="card">
                 <full-calendar #calendar [options]="calendarOptions"></full-calendar>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12 col-md-6">
             <div class="card">
                 <table class="table table-striped">
                     <thead class="thead-dark">

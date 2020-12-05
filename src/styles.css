@@ -3,9 +3,6 @@ body {
     font-family: 'Lato', sans-serif;
     background-color:  #f1f1f1;
 }
-table tbody td {
-  padding: 10px !important;
-}
 
 table th {
   text-align: center;
@@ -19,13 +16,6 @@ td.keyword {
   text-align: center;
 }
 
-/* table th {
-  font-size: 15pt;
-}
-
-table td {
-  font-size: 15pt;
-} */
 .tab {
     float: left;
     border: 1px solid #ccc;
@@ -88,4 +78,35 @@ table td {
     }
     .tab button {float: left;}
     /* div.content {margin-left: 0;} */
+  }
+
+  .font-size4rem{
+    font-size: 4rem;
+  }
+
+  .font-size2rem{
+    font-size: 2rem;
+  }
+
+  .font-size15rem{
+    font-size: 1.5rem;
+  }
+
+  .cursor-pointer{
+    cursor: pointer;
+  }
+  .mh50vh{
+    overflow: auto;
+    max-height: 50vh;
+  }
+  .mh72vh{
+    overflow: auto;
+    max-height: 72vh;
+  }
+  .mh80vh{
+    overflow: auto;
+    max-height: 80vh;
+  }
+  .word-break{
+    word-wrap: break-word;
   }

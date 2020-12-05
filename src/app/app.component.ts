@@ -51,7 +51,7 @@ ngbModalOptions: NgbModalOptions = {
   }
 
   aboutClick(){
-
+    this.modalService.open(AboutComponent,this.ngbModalOptions);
   }
 
 }

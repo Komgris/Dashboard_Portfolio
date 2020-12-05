@@ -1,33 +1,31 @@
 <div class="row justify-content-between">
     <div>
-        <h1 style=" font-size: 4rem;">Libary : openlibrary API</h1>
+        <h1 class="font-size4rem">Libary : openlibrary API</h1>
     </div>
     <div>
-        <div style="margin-right: 10px;">
+        <div class="mr-1">
             <div class="rounded-circle icon-cart-libary">
                 <span (click)="showCart()" class="material-icons md-48">shopping_cart</span>
             </div>
-            <div style=" float: right;"><h3>{{cartCount}}</h3></div> 
+            <div class="float-right"><h3>{{cartCount}}</h3></div> 
         </div>
     </div>
 </div>
 <div class="container">
     <div class="row">
         <div class="col-sm-7">
-            <input type="text" [(ngModel)]="keyword"
-                style="width: 100%; font-size: 2rem; text-align: center; border-radius: 10px;">
+            <input class=" w-100 font-size2rem text-center rounded" type="text" [(ngModel)]="keyword">
         </div>
         <div class="col-sm-2">
-            <select [(ngModel)]="selectedOption" class="form-control form-control-lg" style="font-size: 1.5rem; height: 100%;">
+            <select [(ngModel)]="selectedOption" class="form-control form-control-lg font-size15rem h-100">
                 <option *ngFor="let item of searchOption;" [ngValue]="item.key" >{{item.value}}</option>
               </select>
         </div>
         <div class="col-sm-3">
-            <button (click)="onSearch()" class="btn btn-success btn-lg btn-block"
-                style="font-size: 1.5rem;">Search</button>
+            <button (click)="onSearch()" class="btn btn-success btn-lg btn-block font-size15rem">Search</button>
         </div>
         <div class="col-sm-12">
-            <div class="row d-flex justify-content-between" style="margin-top: 10px;">
+            <div class="row d-flex justify-content-between mt-1">
                 <div >
                     <label ><h2>Search Result : {{bookCount}}</h2></label>
                 </div>
@@ -36,9 +34,8 @@
                 </div>
             </div>
         </div>
-        <div style="overflow: auto; max-height: 72vh;">
-            <div *ngFor="let item of mockReport;" class="col-sm-12"
-                style="margin-top: 10px; margin-bottom: 10px; border: 1px solid white;  border-radius: 5px; background-color: whitesmoke;">
+        <div class="mh72vh">
+            <div *ngFor="let item of mockReport;" class="col-sm-12 mt-1 mb-1 border border-white rounded bg-white">
                 <div class="row">
                     <div class="col-sm-3">
                         <div *ngIf="item.cover_edition_key; then thenBlock; else elseBlock"></div>
@@ -46,41 +43,39 @@
                         <ng-template #elseBlock><h2>No Image Avaliable</h2></ng-template> 
                     </div>
                     <div class="col-sm-9">
-                        <div class="card" style="padding: 10px 10px 10px 10px; word-wrap: break-word;">
-                            <div style=" display: flex; flex-direction: row;"><label>
-                                    <h4 style="font-weight: bold; text-decoration: underline;">Title: </h4>
+                        <div class="card p-1 word-break">
+                            <div class="d-flex flex-row "><label>
+                                    <h4 class="font-weight-bold"><u>Title:</u> </h4>
                                 </label>
-                                <h5 style="margin-left: 10px;">{{item.title_suggest}}</h5>
+                                <h5 class="ml-1">{{item.title_suggest}}</h5>
                             </div>
-                            <div style=" display: flex; flex-direction: row;"><label>
-                                    <h4 style="font-weight: bold; text-decoration: underline;">Author: </h4>
+                            <div class="d-flex flex-row"><label>
+                                    <h4 class="font-weight-bold"><u>Author:</u> </h4>
                                 </label>
-                                <h5 style="margin-left: 10px;">{{item.author_name}}</h5>
+                                <h5 class="ml-1">{{item.author_name}}</h5>
                             </div>
-                            <div style=" display: flex; flex-direction: row;"><label>
-                                    <h4 style="font-weight: bold; text-decoration: underline;">Publisher: </h4>
+                            <div class="d-flex flex-row"><label>
+                                    <h4 class="font-weight-bold"><u>Publisher: </u></h4>
                                 </label>
-                                <h5 style="margin-left: 10px;">{{item.publisher}}</h5>
+                                <h5 class="ml-1 word-break">{{item.publisher}}</h5>
                             </div>
                             <label>
-                                <h4 style="font-weight: bold; text-decoration: underline;">Language : </h4>
+                                <h4 class="font-weight-bold"><u>Language :</u> </h4>
                             </label>
                             <div >
-                                <span *ngFor="let lg of item.language;" class="badge badge-pill badge-primary"
-                                    style="margin-left: 5px; ">
+                                <span *ngFor="let lg of item.language;" class="badge badge-pill badge-primary ml-1">
                                     <h5>{{lg}}</h5>
                                 </span>
                             </div>
                             <label>
-                                <h4 style="font-weight: bold; text-decoration: underline;">Subject : </h4>
+                                <h4 class="font-weight-bold"><u>Subject : </u></h4>
                             </label>
                             <div>
-                                <span *ngFor="let sj of item.subject;" class="badge badge-pill badge-success"
-                                    style="margin-left: 5px; margin-bottom: 5px;">
+                                <span *ngFor="let sj of item.subject;" class="badge badge-pill badge-success ml-1 mb-1">
                                     <h5>{{sj}}</h5>
                                 </span>
                             </div>
-                            <button (click)="borrow(item.title_suggest,item.author_name,item.cover_edition_key)" class ="btn btn-primary btn-lg btn-block" style="margin-top: 10px;">Borrow</button>
+                            <button (click)="borrow(item.title_suggest,item.author_name,item.cover_edition_key)" class ="btn btn-primary btn-lg btn-block mt-1">Borrow</button>
                         </div>
                     </div>
                 </div>
