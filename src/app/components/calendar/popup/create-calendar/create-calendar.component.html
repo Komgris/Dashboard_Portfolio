@@ -3,14 +3,14 @@
     <form>
 
           <div class="form-group row">
-            <div class="col-sm-6 col-md-6"> <label><h4>Room</h4></label></div>
-            <div class="col-sm-6 col-md-6"> <label><h4>Meeting Type</h4></label></div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-12 col-md-6"> <label><h4>Room</h4></label></div>
+            <div class="col-sm-12 col-md-6"> <label><h4>Meeting Type</h4></label></div>
+            <div class="col-sm-12 col-md-6">
                 <select [(ngModel)]="selectedRoom" name="room" class="form-control form-control-m" >
                     <option *ngFor="let item of roomList;" [ngValue]="item" >{{item}}</option>
                 </select>  
             </div>
-            <div class="col-sm-6 col-md-6">
+            <div class="col-sm-12 col-md-6">
                 <select [(ngModel)]="model.color" name="room" class="form-control form-control-m" >
                     <option *ngFor="let item of colorList;" [ngValue]="item.key" >{{item.value}}</option>
                 </select>  
@@ -29,10 +29,10 @@
             <input [(ngModel)]="model.dateFinish" name="dateFinish" type="datetime-local" va class="form-control" id="dateFinish">    
         </div>
             <div class="row justify-content-around">
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-3">
                     <button (click)="save()" type="button" class="btn btn-primary btn-lg">Confirm</button>
                 </div>
-                <div class="col-sm-3">
+                <div class="col-sm-12 col-md-3">
                     <button (click)="activeModal.close()" type="button" class="btn btn-secondary btn-lg">Close</button>
                 </div>   
         </div>
