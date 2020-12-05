@@ -30,24 +30,14 @@
                 <div class="card-header bg-success text-white">
                     <div class="row justify-content-between">
                         <h3>Ngx Gauge : Random data</h3>
-                        <button type="button" class="btn btn-outline-light btn-lg mr-2">Random</button>
+                        <button (click)="randomGaguge()" type="button" class="btn btn-outline-light btn-lg mr-2">Random</button>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 col-sm-12">
-                            <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
-                                [append]="gaugeAppendText">
-                            </ngx-gauge>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
-                                [append]="gaugeAppendText">
-                            </ngx-gauge>
-                        </div>
-                        <div class="col-md-4 col-sm-12">
-                            <ngx-gauge [type]="gaugeType" [value]="gaugeValue" [label]="gaugeLabel"
-                                [append]="gaugeAppendText">
+                        <div *ngFor="let item of gaugeList; let i = index" class="col-md-4 col-sm-12">
+                            <ngx-gauge [type]="item.gaugeType" [value]="item.gaugeValue" [label]="item.gaugeLabel"
+                                [append]="item.gaugeAppendText" [thick]="item.gaugeForm" [thresholds]="thresholdConfig">
                             </ngx-gauge>
                         </div>
                     </div>

@@ -2,6 +2,8 @@
                 <div class="tab">
                     <button (click)="select(item)" *ngFor="let item of menuitems; let i = index" class="tablinks"
                         [ngClass]="{'tab-active': item.isActive }">{{item.name}}</button>
+
+                        <button (click)="aboutClick()" class="tablinks">About</button>
             </div>
                 <main role="main" >
                     <router-outlet></router-outlet>

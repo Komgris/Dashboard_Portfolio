@@ -4,6 +4,7 @@ import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import * as moment from 'moment';
 import { Label } from 'ng2-charts/lib/base-chart.directive';
 import { ICovid } from 'src/app/interfaces/covid.interface';
+import { IGauge } from 'src/app/interfaces/gauge.interface';
 import { IRandomCat } from 'src/app/interfaces/random-cat.interface';
 import { Constants } from 'src/app/models/constants';
 import { JsonMockService } from 'src/app/services/json-mock.service';
@@ -33,10 +34,17 @@ export class DashboardComponent implements OnInit {
 
   public barChartData: ChartDataSets[] = [];
   
-  gaugeType:any = "semi";
-  gaugeValue = 28.3;
-  gaugeLabel = "Speed";
-  gaugeAppendText = "km/hr";
+  gaugeList:IGauge[] =[
+    {gaugeType:'full', gaugeValue:28, gaugeLabel:'Speed', gaugeAppendText:'km/hr' ,gaugeForm: 10 },
+    {gaugeType:'semi', gaugeValue:28, gaugeLabel:'Speed', gaugeAppendText:'km/hr' ,gaugeForm: 5},
+    {gaugeType:'arch', gaugeValue:28, gaugeLabel:'Speed', gaugeAppendText:'km/hr' ,gaugeForm: 3},
+  ]
+
+  thresholdConfig = {
+    '0': {color: 'green'},
+    '40': {color: 'orange'},
+    '75': {color: 'red'}
+  };
   randomCatList:IRandomCat[]=[];
   randomCatAmount = 2;
   cuurencyList:any;
@@ -63,6 +71,11 @@ export class DashboardComponent implements OnInit {
       return { key: x, value: data.rates[x]}
     })
     this.currencyDate = data.date;
+  }
+
+  randomGaguge(){
+    let random = Math.floor(Math.random() * 101);
+    this.gaugeList.map(x=> x.gaugeValue = random);
   }
 
   async covidChart(){
